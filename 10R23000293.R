@@ -11,7 +11,7 @@ library(tidyr)
 # Connect to Snowflake
 con <- DBI::dbConnect(odbc::odbc(), "snowflake-moffitt")
 
-## Identify Snowflake tables required for this request 
+## Identify Snowflake tables required for this request. 
 CancerRegistry_General <- tbl(con,in_schema(sql("MCAP_CDSC_DEV.DATANORM"),"REGISTRY_GENERAL"))
 Survey <-  tbl(con, in_schema (sql("MCAP_CDSC_DEV.DATANORM"),"SURVEY"))
 PatientInfo <-  tbl(con, in_schema (sql("MCAP_CDSC_DEV.DATANORM"),"PATIENT_INFO"))
